@@ -45,7 +45,7 @@ void	Contact::setFirstName(string firstName) {
 }
 
 void	Contact::setLastName(string lastName) {
-	this->lastName;
+	this->lastName = lastName;
 }
 
 void	Contact::setNickname(string nickname) {
@@ -64,24 +64,24 @@ void	Contact::setData() {
 
 	string	word;
 
-	std::cout << "Please Enter firstName:" << endl;
-	std::getLine(cin, word);
+	cout << "Please Enter firstName:" << endl;
+	getline(cin, word);
 	this->setFirstName(word);
 
 	cout << "Please Enter lastName:" << endl;
-	std::getLine(cin, word);
+	getline(cin, word);
 	this->setLastName(word);
 
 	cout << "Please Enter nickname:" << endl;
-	std::getLine(cin, word);
+	getline(cin, word);
 	this->setNickname(word);
 
 	cout << "Please Enter phoneNumber:" << endl;
-	std::getLine(cin, word);
+	getline(cin, word);
 	this->setPhoneNumber(word);
 
 	cout << "Please Enter darkestSecret:" << endl;
-	std::getLine(cin, word);
+	getline(cin, word);
 	this->setDarkestSecret(word);
 
 	cout << "Thank you, new contact is created!" << endl;
@@ -108,4 +108,6 @@ bool	Contact::isEmpty() {
 	if (this->getDarkestSecret().empty()) {
 		return true;
 	}
+
+	return false;
 }

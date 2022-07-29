@@ -32,13 +32,13 @@ public:
 	void		setLastName(string lastName);
 	void		setNickname(string nickname);
 	void		setPhoneNumber(string phoneNumber);
-	void		darkestSecret(string darkestSecret);
+	void		setDarkestSecret(string darkestSecret);
 
-	string	setFirstName const;
-	string	setLastName const;
-	string	setNickname const;
-	string	setPhoneNumber const;
-	string	darkestSecret const;
+	string	getFirstName() const;
+	string	getLastName() const;
+	string	getNickname() const;
+	string	getPhoneNumber() const;
+	string	getDarkestSecret() const;
 
 	~Contact();
 };
