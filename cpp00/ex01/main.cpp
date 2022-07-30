@@ -11,12 +11,12 @@ int	main() {
 		cout << "Enter the command:" << endl;
 		getline(cin, cmd);
 
-		if (cmd == "EXIT") {
+		if (cmd == "EXIT" || cmd == "exit") {
 			cout << "GoodBye!!!" << endl;
 			break ;
-		} else if (cmd == "ADD") {
+		} else if (cmd == "ADD" || cmd == "add") {
 			phoneBook.addContact();
-		} else if (cmd == "SEARCH") {
+		} else if (cmd == "SEARCH" || cmd == "search") {
 			phoneBook.searchContact();
 		} else {
 			cout << "Error: Command " << cmd << " not found" << endl;

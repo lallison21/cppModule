@@ -2,9 +2,9 @@ NAME	=	phonebook
 
 CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98
-HEADER	=
+HEADER	=	Contact.hpp PhoneBook.hpp
 
-SRCS	=	main.cpp Contact.cpp Contact.hpp PhoneBook.cpp PhoneBook.hpp
+SRCS	=	main.cpp Contact.cpp PhoneBook.cpp
 OBJS	=	$(SRCS:%.cpp=%.o)
 
 WHITE   	=	\033[0m
@@ -21,13 +21,13 @@ CYAN    	=	\033[0;36m
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-				@echo "[$(BLUE)PHONEBOOK$(WHITE)] OBJECT FILES CREATED\n\c"
+				@echo "\n[$(BLUE)PHONEBOOK$(WHITE)] OBJECT FILES CREATED\n\c"
 				@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 				@echo "[$(BLUE)PHONEBOOK$(WHITE)] EXECUTABLE FILE CREATED\n\c"
 
 %.o			:	%.cpp $(HEADER)
 				@$(CC) $(CFLAGS) -c $< -o $@
-				@echo "$(GREEN)❱❱❱❱❱❱$(WHITE)\n\c"
+				@echo "$(GREEN)❱❱❱❱❱❱❱❱❱❱❱❱$(WHITE)\c"
 
 clean		:
 				@$(RM) $(OBJS)

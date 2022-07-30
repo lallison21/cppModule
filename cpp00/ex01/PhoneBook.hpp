@@ -11,7 +11,7 @@ private:
 
 	void viewContacts() const;
 	void numContacts() const;
-	void viewFullInfo() const;
+	void viewFullInfo(Contact contact) const;
 
 public:
 	PhoneBook();

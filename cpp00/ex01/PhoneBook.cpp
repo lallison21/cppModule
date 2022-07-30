@@ -9,11 +9,12 @@ PhoneBook::~PhoneBook() {
 
 void PhoneBook::addContact() {
 
-	if (this->number == 8 || this->number == 0) {
-		this->contact[0].setData();
-		if (this->contact[0].isEmpty()) {
+	if (this->number == 8) {
+		this->number = 0;
+		this->contact[this->number].setData();
+		if (this->contact[this->number].isEmpty()) {
 			cout << "An empty string is not allowed" << endl;
-			this->contact[0] = Contact();
+			this->contact[this->number] = Contact();
 			this->number--;
 		}
 	} else {
@@ -29,33 +30,33 @@ void PhoneBook::addContact() {
 
 void PhoneBook::viewContacts() const {
 
-	cout << "+--------------------------------------+" << endl;
-	cout << "|Index| FirstName| LastName | NickName |" << endl;
-	cout << "+--------------------------------------+" << endl;
+	cout << "+--------------------------------------------------+" << endl;
+	cout << "|  Index  |  FirstName  |  LastName  |   NickName  |" << endl;
+	cout << "+--------------------------------------------------+" << endl;
 
-	for (int i = 0; i < this->number; i++) {
+	for (int i = 0; i < 8; i++) {
 		cout << "|" << setw(5) << i + 1 << "|";
 
-		if (this->contact[i].getFirstName().length() > 10) {
+		if (this->contact[i].getFirstName().length() > 14) {
 			cout << this->contact[i].getFirstName().substr(0, 9) << ".|";
 		} else {
-			cout << setw(10) << this->contact[i].getFirstName() << "|";
+			cout << setw(14) << this->contact[i].getFirstName() << "|";
 		}
 
 		if (this->contact[i].getLastName().length() > 10) {
 			cout << this->contact[i].getLastName().substr(0, 9) << ".|";
 		} else {
-			cout << setw(10) << this->contact[i].getLastName() << "|";
+			cout << setw(14) << this->contact[i].getLastName() << "|";
 		}
 
 		if (this->contact[i].getNickname().length() > 10) {
 			cout << this->contact[i].getNickname().substr(0, 9) << ".|";
 		} else {
-			cout << setw(10) << this->contact[i].getNickname() << "|";
+			cout << setw(14) << this->contact[i].getNickname() << "|";
 		}
 		cout << endl;
 	}
-	cout << "+--------------------------------------+" << endl;
+	cout << "+--------------------------------------------------+" << endl;
 }
 
 void PhoneBook::getMain() {
@@ -73,13 +74,13 @@ void PhoneBook::getMain() {
 	std::cout << "+-------------------------------------------------------+" << endl;
 }
 
-void PhoneBook::viewFullInfo() const {
+void PhoneBook::viewFullInfo(Contact contact) const {
 
-	cout << "|" << "FirstName:		|" << setw(10) << this->contact.getFirstName() << "|" << endl;
-	cout << "|" << "LastName:		|" << setw(10) << this->contact.getLastName() << "|" << endl;
-	cout << "|" << "Nickname:		|" << setw(10) << this->contact.getNickname() << "|" << endl;
-	cout << "|" << "PhoneNumber:	|" << setw(10) << this->contact.getPhoneNumber() << "|" << endl;
-	cout << "|" << "DarkestSecret:	|" << setw(10) << this->contact.getDarkestSecret() << "|" << endl;
+	cout << "|" << "FirstName:			    |" << setw(14) << contact.getFirstName() << "|" << endl;
+	cout << "|" << "LastName:			    |" << setw(14) << contact.getLastName() << "|" << endl;
+	cout << "|" << "Nickname:			    |" << setw(14) << contact.getNickname() << "|" << endl;
+	cout << "|" << "PhoneNumber:			    |" << setw(14) << contact.getPhoneNumber() << "|" << endl;
+	cout << "|" << "DarkestSecret:			    |" << setw(14) << contact.getDarkestSecret() << "|" << endl;
 }
 
 void PhoneBook::numContacts() const {
