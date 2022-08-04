@@ -21,9 +21,9 @@ CYAN    	=	\033[0;36m
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-				@echo "\n[$(BLUE)PHONEBOOK$(WHITE)] OBJECT FILES CREATED\n\c"
+				@echo "\n[$(BLUE)ACCOUNT$(WHITE)] OBJECT FILES CREATED\n\c"
 				@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-				@echo "[$(BLUE)PHONEBOOK$(WHITE)] EXECUTABLE FILE CREATED\n\c"
+				@echo "[$(BLUE)ACCOUNT$(WHITE)] EXECUTABLE FILE CREATED\n\c"
 
 %.o			:	%.cpp $(HEADER)
 				@$(CC) $(CFLAGS) -c $< -o $@
