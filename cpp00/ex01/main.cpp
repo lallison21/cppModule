@@ -3,23 +3,23 @@
 
 int	main() {
 
-	PhoneBook	phoneBook;
-	string		cmd;
+	PhoneBook		phoneBook;
+	std::string		cmd;
 
 	phoneBook.getMain();
 	while (true) {
-		cout << "Enter the command:" << endl;
-		getline(cin, cmd);
+		std::cout << "Enter the command:" << std::endl;
+		getline(std::cin, cmd);
 
 		if (cmd == "EXIT" || cmd == "exit") {
-			cout << "GoodBye!!!" << endl;
+			std::cout << "GoodBye!!!" << std::endl;
 			break ;
 		} else if (cmd == "ADD" || cmd == "add") {
 			phoneBook.addContact();
 		} else if (cmd == "SEARCH" || cmd == "search") {
 			phoneBook.searchContact();
 		} else {
-			cout << "Error: Command " << cmd << " not found" << endl;
+			std::cout << "Error: Command " << cmd << " not found" << std::endl;
 		}
 	}
 	return (0);

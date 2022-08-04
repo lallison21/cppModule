@@ -6,39 +6,37 @@
 # include <stdlib.h>
 # include <iomanip>
 
-using namespace std;
-
 class Contact {
 
 private:
-	string	firstName;
-	string	lastName;
-	string	nickname;
-	string	phoneNumber;
-	string	darkestSecret;
+	std::string	firstName;
+	std::string	lastName;
+	std::string	nickname;
+	std::string	phoneNumber;
+	std::string	darkestSecret;
 
 public:
 	Contact();
-	Contact(string firstName,
-				string lastName,
-				string nickname,
-				string phoneNumber,
-				string darkestSecret);
+	Contact(std::string firstName,
+				std::string lastName,
+				std::string nickname,
+				std::string phoneNumber,
+				std::string darkestSecret);
 
 	void		setData();
 	bool		isEmpty();
 
-	void		setFirstName(string firstName);
-	void		setLastName(string lastName);
-	void		setNickname(string nickname);
-	void		setPhoneNumber(string phoneNumber);
-	void		setDarkestSecret(string darkestSecret);
+	void		setFirstName(std::string firstName);
+	void		setLastName(std::string lastName);
+	void		setNickname(std::string nickname);
+	void		setPhoneNumber(std::string phoneNumber);
+	void		setDarkestSecret(std::string darkestSecret);
 
-	string	getFirstName() const;
-	string	getLastName() const;
-	string	getNickname() const;
-	string	getPhoneNumber() const;
-	string	getDarkestSecret() const;
+	std::string	getFirstName() const;
+	std::string	getLastName() const;
+	std::string	getNickname() const;
+	std::string	getPhoneNumber() const;
+	std::string	getDarkestSecret() const;
 
 	~Contact();
 };

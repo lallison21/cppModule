@@ -13,14 +13,14 @@ void PhoneBook::addContact() {
 		this->number = 0;
 		this->contact[this->number].setData();
 		if (this->contact[this->number].isEmpty()) {
-			cout << "An empty string is not allowed" << endl;
+			std::cout << "An empty string is not allowed" << std::endl;
 			this->contact[this->number] = Contact();
 			this->number--;
 		}
 	} else {
 		this->contact[this->number].setData();
 		if (this->contact[this->number].isEmpty()) {
-			cout << "An empty string is not allowed" << endl;
+			std::cout << "An empty string is not allowed" << std::endl;
 			this->contact[this->number] = Contact();
 			this->number--;
 		}
@@ -30,69 +30,69 @@ void PhoneBook::addContact() {
 
 void PhoneBook::viewContacts() const {
 
-	cout << "+--------------------------------------------------+" << endl;
-	cout << "|  Index  |  FirstName  |  LastName  |   NickName  |" << endl;
-	cout << "+--------------------------------------------------+" << endl;
+	std::cout << "+--------------------------------------------------+" << std::endl;
+	std::cout << "|  Index  |  FirstName  |  LastName  |   NickName  |" << std::endl;
+	std::cout << "+--------------------------------------------------+" << std::endl;
 
 	for (int i = 0; i < 8; i++) {
-		cout << "|" << setw(5) << i + 1 << "|";
+		std::cout << "|" << std::setw(5) << i + 1 << "|";
 
 		if (this->contact[i].getFirstName().length() > 14) {
-			cout << this->contact[i].getFirstName().substr(0, 9) << ".|";
+			std::cout << this->contact[i].getFirstName().substr(0, 9) << ".|";
 		} else {
-			cout << setw(14) << this->contact[i].getFirstName() << "|";
+			std::cout << std::setw(14) << this->contact[i].getFirstName() << "|";
 		}
 
 		if (this->contact[i].getLastName().length() > 10) {
-			cout << this->contact[i].getLastName().substr(0, 9) << ".|";
+			std::cout << this->contact[i].getLastName().substr(0, 9) << ".|";
 		} else {
-			cout << setw(14) << this->contact[i].getLastName() << "|";
+			std::cout << std::setw(14) << this->contact[i].getLastName() << "|";
 		}
 
 		if (this->contact[i].getNickname().length() > 10) {
-			cout << this->contact[i].getNickname().substr(0, 9) << ".|";
+			std::cout << this->contact[i].getNickname().substr(0, 9) << ".|";
 		} else {
-			cout << setw(14) << this->contact[i].getNickname() << "|";
+			std::cout << std::setw(14) << this->contact[i].getNickname() << "|";
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
-	cout << "+--------------------------------------------------+" << endl;
+	std::cout << "+--------------------------------------------------+" << std::endl;
 }
 
 void PhoneBook::getMain() {
 
-	std::cout << "+-------------------------------------------------------+" << endl;
-	std::cout << "|                  AVAILABLE COMMANDS                   |" << endl;
-	std::cout << "+-------------------------------------------------------+" << endl;
-	std::cout << "|                                                       |" << endl;
-	std::cout << "|     ADD     -   Add a contact                         |" << endl;
-	std::cout << "|                                                       |" << endl;
-	std::cout << "|     SEARCH  -   Find a contact                        |" << endl;
-	std::cout << "|                                                       |" << endl;
-	std::cout << "|     EXIT    -   exit from PhoneBook                   |" << endl;
-	std::cout << "|                                                       |" << endl;
-	std::cout << "+-------------------------------------------------------+" << endl;
+	std::cout << "+-------------------------------------------------------+" << std::endl;
+	std::cout << "|                  AVAILABLE COMMANDS                   |" << std::endl;
+	std::cout << "+-------------------------------------------------------+" << std::endl;
+	std::cout << "|                                                       |" << std::endl;
+	std::cout << "|     ADD     -   Add a contact                         |" << std::endl;
+	std::cout << "|                                                       |" << std::endl;
+	std::cout << "|     SEARCH  -   Find a contact                        |" << std::endl;
+	std::cout << "|                                                       |" << std::endl;
+	std::cout << "|     EXIT    -   exit from PhoneBook                   |" << std::endl;
+	std::cout << "|                                                       |" << std::endl;
+	std::cout << "+-------------------------------------------------------+" << std::endl;
 }
 
 void PhoneBook::viewFullInfo(Contact contact) const {
 
-	cout << "|" << "FirstName:			    |" << setw(14) << contact.getFirstName() << "|" << endl;
-	cout << "|" << "LastName:			    |" << setw(14) << contact.getLastName() << "|" << endl;
-	cout << "|" << "Nickname:			    |" << setw(14) << contact.getNickname() << "|" << endl;
-	cout << "|" << "PhoneNumber:			    |" << setw(14) << contact.getPhoneNumber() << "|" << endl;
-	cout << "|" << "DarkestSecret:			    |" << setw(14) << contact.getDarkestSecret() << "|" << endl;
+	std::cout << "|" << "FirstName:			    |" << std::setw(14) << contact.getFirstName() << "|" << std::endl;
+	std::cout << "|" << "LastName:			    |" << std::setw(14) << contact.getLastName() << "|" << std::endl;
+	std::cout << "|" << "Nickname:			    |" << std::setw(14) << contact.getNickname() << "|" << std::endl;
+	std::cout << "|" << "PhoneNumber:			    |" << std::setw(14) << contact.getPhoneNumber() << "|" << std::endl;
+	std::cout << "|" << "DarkestSecret:			    |" << std::setw(14) << contact.getDarkestSecret() << "|" << std::endl;
 }
 
 void PhoneBook::numContacts() const {
 
-	string	id;
+	std::string	id;
 	int		index;
 
-	cout << "Enter contact number:" << endl;
-	getline(cin, id);
+	std::cout << "Enter contact number:" << std::endl;
+	getline(std::cin, id);
 	index = atoi(id.c_str());
 	if (index < 1 || index > this->number) {
-		cout << "Contact not found" << endl;
+		std::cout << "Contact not found" << std::endl;
 		return ;
 	}
 	viewFullInfo(contact[index - 1]);
@@ -101,7 +101,7 @@ void PhoneBook::numContacts() const {
 void PhoneBook::searchContact() const {
 
 	if (this->number == 0) {
-		cout << "Sorry, PhoneBook is empty" << endl;
+		std::cout << "Sorry, PhoneBook is empty" << std::endl;
 		return ;
 	}
 	viewContacts();

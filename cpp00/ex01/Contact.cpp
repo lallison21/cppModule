@@ -1,10 +1,10 @@
 #include "Contact.hpp"
 
-Contact::Contact(string firstName,
-				 string lastName,
-				 string nickname,
-				 string phoneNumber,
-				 string darkestSecret) {
+Contact::Contact(std::string firstName,
+				 std::string lastName,
+				 std::string nickname,
+				 std::string phoneNumber,
+				 std::string darkestSecret) {
 
 	this->firstName = firstName;
 	this->lastName = lastName;
@@ -40,51 +40,51 @@ std::string		Contact::getDarkestSecret() const {
 	return this->darkestSecret;
 }
 
-void	Contact::setFirstName(string firstName) {
+void	Contact::setFirstName(std::string firstName) {
 	this->firstName = firstName;
 }
 
-void	Contact::setLastName(string lastName) {
+void	Contact::setLastName(std::string lastName) {
 	this->lastName = lastName;
 }
 
-void	Contact::setNickname(string nickname) {
+void	Contact::setNickname(std::string nickname) {
 	this->nickname = nickname;
 }
 
-void	Contact::setPhoneNumber(string phoneNumber) {
+void	Contact::setPhoneNumber(std::string phoneNumber) {
 	this->phoneNumber = phoneNumber;
 }
 
-void	Contact::setDarkestSecret(string darkestSecret) {
+void	Contact::setDarkestSecret(std::string darkestSecret) {
 	this->darkestSecret = darkestSecret;
 }
 
 void	Contact::setData() {
 
-	string	word;
+	std::string	word;
 
-	cout << "Please Enter firstName:" << endl;
-	getline(cin, word);
+	std::cout << "Please Enter firstName:" << std::endl;
+	getline(std::cin, word);
 	this->setFirstName(word);
 
-	cout << "Please Enter lastName:" << endl;
-	getline(cin, word);
+	std::cout << "Please Enter lastName:" << std::endl;
+	getline(std::cin, word);
 	this->setLastName(word);
 
-	cout << "Please Enter nickname:" << endl;
-	getline(cin, word);
+	std::cout << "Please Enter nickname:" << std::endl;
+	getline(std::cin, word);
 	this->setNickname(word);
 
-	cout << "Please Enter phoneNumber:" << endl;
-	getline(cin, word);
+	std::cout << "Please Enter phoneNumber:" << std::endl;
+	getline(std::cin, word);
 	this->setPhoneNumber(word);
 
-	cout << "Please Enter darkestSecret:" << endl;
-	getline(cin, word);
+	std::cout << "Please Enter darkestSecret:" << std::endl;
+	getline(std::cin, word);
 	this->setDarkestSecret(word);
 
-	cout << "Thank you, new contact is created!" << endl;
+	std::cout << "Thank you, new contact is created!" << std::endl;
 }
 
 bool	Contact::isEmpty() {
