@@ -35,24 +35,24 @@ void PhoneBook::viewContacts() const {
 	std::cout << "+--------------------------------------------------+" << std::endl;
 
 	for (int i = 0; i < 8; i++) {
-		std::cout << "|" << std::setw(5) << i + 1 << "|";
+		std::cout << "|" << std::setw(9) << i + 1 << "|";
 
 		if (this->contact[i].getFirstName().length() > 14) {
-			std::cout << this->contact[i].getFirstName().substr(0, 9) << ".|";
+			std::cout << this->contact[i].getFirstName().substr(0, 12) << ".|";
 		} else {
-			std::cout << std::setw(14) << this->contact[i].getFirstName() << "|";
+			std::cout << std::setw(13) << this->contact[i].getFirstName() << "|";
 		}
 
 		if (this->contact[i].getLastName().length() > 10) {
-			std::cout << this->contact[i].getLastName().substr(0, 9) << ".|";
+			std::cout << this->contact[i].getLastName().substr(0, 11) << ".|";
 		} else {
-			std::cout << std::setw(14) << this->contact[i].getLastName() << "|";
+			std::cout << std::setw(12) << this->contact[i].getLastName() << "|";
 		}
 
 		if (this->contact[i].getNickname().length() > 10) {
-			std::cout << this->contact[i].getNickname().substr(0, 9) << ".|";
+			std::cout << this->contact[i].getNickname().substr(0, 12) << ".|";
 		} else {
-			std::cout << std::setw(14) << this->contact[i].getNickname() << "|";
+			std::cout << std::setw(13) << this->contact[i].getNickname() << "|";
 		}
 		std::cout << std::endl;
 	}
