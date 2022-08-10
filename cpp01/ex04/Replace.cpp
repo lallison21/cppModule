@@ -1,17 +1,12 @@
 #include "Replace.hpp"
 
-Replace::Replace(std::string filename, std::string s1, std::string s2) {
-
-	this->filename = filename;
-	this->s1 = s1;
-	this->s2 = s2;
+Replace::Replace(std::string filename, std::string s1, std::string s2) : filename(filename), s1(s1), s2(s2) {
 }
 
 Replace::~Replace() {
 }
 
-void Replace::checkS1(std::string &str) {
-
+void Replace::checkS1(std::string &str) const {
 	int i = str.find(s1);
 
 	while (i != -1) {
@@ -21,7 +16,7 @@ void Replace::checkS1(std::string &str) {
 	}
 }
 
-void Replace::replace() {
+void Replace::replace() const {
 
 	std::ifstream streamIn;
 	std::string outfile;

@@ -10,7 +10,7 @@ private:
 	void info();
 	void warning();
 	void error();
-	int getIndex(std::string level);
+	int getIndex(std::string level) const ;
 
 public:
 	Harl();

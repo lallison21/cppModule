@@ -36,13 +36,10 @@ void Harl::complain(std::string level) {
 	switch (i) {
 		case 0:
 			(this->*fptr[0])();
-			break ;
 		case 1:
 			(this->*fptr[1])();
-			break ;
 		case 2:
 			(this->*fptr[2])();
-			break ;
 		case 3:
 			(this->*fptr[3])();
 			break ;
@@ -51,7 +48,7 @@ void Harl::complain(std::string level) {
 	}
 }
 
-int Harl::getIndex(std::string level) {
+int Harl::getIndex(std::string level) const {
 	bool act[] = {level == "DEBUG", level == "INFO", level == "WARNING", level == "ERROR"};
 
 	int i = 0;
