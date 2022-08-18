@@ -1,25 +1,25 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-	this->name = "defaultName";
-	this->hp = 10;
-	this->energy = 10;
-	this->damage = 0;
+	this->_name = "defaultName";
+	this->_hp = 10;
+	this->_energy = 10;
+	this->_damage = 0;
 	std::cout << "The constructor is called" << std::endl;
 	printInfo();
 }
 
 ClapTrap::ClapTrap(std::string name) {
-	this->name = name;
-	this->hp = 10;
-	this->energy = 10;
-	this->damage = 0;
+	this->_name = name;
+	this->_hp = 10;
+	this->_energy = 10;
+	this->_damage = 0;
 	std::cout << "The constructor is called" << std::endl;
 	printInfo();
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "The destructor from " + this->name + " called" << std::endl;
+	std::cout << "The destructor from " + this->_name + " called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {
@@ -29,7 +29,7 @@ void ClapTrap::attack(const std::string& target) {
 	}
 
 	if (this->getEnergy() > 0) {
-		std::cout << "ClapTrap " + this->name + " attacks " + target +
+		std::cout << "ClapTrap " + this->_name + " attacks " + target +
 					 ", causing " << this->getDamage()
 				  << " points of damage" << std::endl;
 	} else
@@ -37,12 +37,12 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (this->hp > 0) {
-		if (this->hp < amount)
-			this->hp = 0;
+	if (this->_hp > 0) {
+		if (this->_hp < amount)
+			this->_hp = 0;
 		else
-			this->hp = this->hp - amount;
-		std::cout << this->name << " received damage" << std::endl;
+			this->_hp = this->_hp - amount;
+		std::cout << this->_name << " received damage" << std::endl;
 	}
 }
 
@@ -51,12 +51,12 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << this->getName() << " died." << std::endl;
 		return;
 	}
-	if (this->hp < 10) {
-		if (this->hp + amount > 10)
-			this->hp = 10;
+	if (this->_hp < 10) {
+		if (this->_hp + amount > 10)
+			this->_hp = 10;
 		else
-			this->hp = this->hp + amount;
-		std::cout << this->name << " recovered" << std::endl;
+			this->_hp = this->_hp + amount;
+		std::cout << this->_name << " recovered" << std::endl;
 	}
 }
 
@@ -67,46 +67,46 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 	std::cout <<"Copy assignment operator called" << std::endl;
-	this->name = other.getName();
-	this->hp = other.getHp();
-	this->energy = other.getEnergy();
-	this->damage = other.getDamage();
+	this->_name = other.getName();
+	this->_hp = other.getHp();
+	this->_energy = other.getEnergy();
+	this->_damage = other.getDamage();
 	return  (*this);
 }
 
 void ClapTrap::printInfo() {
-	std::cout << "Name: " << this->name << " HP: " << this->hp << " Energy: " <<
-			  this->energy << std::endl;
+	std::cout << "Name: " << this->_name << " HP: " << this->_hp << " Energy: " <<
+			  this->_energy << std::endl;
 }
 
 std::string ClapTrap::getName() const {
-	return this->name;
+	return this->_name;
 }
 
 unsigned int ClapTrap::getHp() const {
-	return this->hp;
+	return this->_hp;
 }
 
 unsigned int ClapTrap::getEnergy() const {
-	return this->energy;
+	return this->_energy;
 }
 
 unsigned int ClapTrap::getDamage() const {
-	return this->damage;
+	return this->_damage;
 }
 
 void ClapTrap::setName(std::string name) {
-	this->name = name;
+	this->_name = name;
 }
 
 void ClapTrap::setHp(unsigned int hp) {
-	this->hp = hp;
+	this->_hp = hp;
 }
 
 void ClapTrap::setEnergy(unsigned int energy) {
-	this->energy = energy;
+	this->_energy = energy;
 }
 
 void ClapTrap::setDamage(unsigned int damage) {
-	this->damage = damage;
+	this->_damage = damage;
 }

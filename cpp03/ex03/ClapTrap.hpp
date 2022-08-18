@@ -7,10 +7,10 @@
 class ClapTrap {
 
 protected:
-	std::string name;
-	unsigned int hp;
-	unsigned int energy;
-	unsigned int damage;
+	std::string _name;
+	unsigned int _hp;
+	unsigned int _energy;
+	unsigned int _damage;
 
 public:
 	ClapTrap();

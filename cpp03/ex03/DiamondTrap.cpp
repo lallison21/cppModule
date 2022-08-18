@@ -3,19 +3,19 @@
 DiamondTrap::DiamondTrap() {
 	std::cout << "The DiamondTrap constructor called" << std::endl;
 	this->name = "_";
-	ClapTrap::name = this->name + "clap_name";
-	this->hp = FragTrap::getHp();
-	this->energy = ScavTrap::getEnergy();
-	this->damage = FragTrap::getDamage();
+	ClapTrap::_name = this->_name + "clap_name";
+	this->_hp = FragTrap::getHp();
+	this->_energy = ScavTrap::getEnergy();
+	this->_damage = FragTrap::getDamage();
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name) {
 	std::cout << "The DiamondTrap constructor from " << name << "is called" << std::endl;
-	this->name = name;
-	ClapTrap::name = this->name + "_clap_name";
-	this->hp = FragTrap::getHp();
-	this->energy = ScavTrap::getEnergy();
-	this->damage = FragTrap::getDamage();
+	this->_name = name;
+	ClapTrap::_name = this->_name + "_clap_name";
+	this->_hp = FragTrap::getHp();
+	this->_energy = ScavTrap::getEnergy();
+	this->_damage = FragTrap::getDamage();
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other) {
@@ -29,10 +29,10 @@ DiamondTrap::~DiamondTrap() {
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
 	std::cout <<"Copy assignment operator called" << std::endl;
-	this->name = other.getName();
-	this->hp = other.getHp();
-	this->energy = other.getEnergy();
-	this->damage = other.getDamage();
+	this->_name = other.getName();
+	this->_hp = other.getHp();
+	this->_energy = other.getEnergy();
+	this->_damage = other.getDamage();
 	return  (*this);
 }
 
@@ -42,7 +42,7 @@ void DiamondTrap::attack(const std::string &target) {
 
 void DiamondTrap::whoAmI() {
 	std::cout << "I am " << this->name << " clapTrap name : " <<
-			  ClapTrap::name << " HP : " << this->getHp() << " Energy: " <<
+			  ClapTrap::_name << " HP : " << this->getHp() << " Energy: " <<
 			  this->getEnergy() << " Damage: " << this->getDamage() <<
 			  std::endl;
 }
