@@ -10,7 +10,7 @@ int main() {
 		if (i < 2) {
 			animals[i] = new Dog();
 		} else {
-			animals[i] = new Cat;
+			animals[i] = new Cat();
 		}
 		animals[i]->makeSound();
 	}

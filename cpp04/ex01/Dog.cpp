@@ -1,35 +1,35 @@
 #include "Dog.hpp"
 
 Dog::Dog() {
-	std::cout << "Dog constructor is called" << std::endl;
-	this->_type = "Dog";
-	this->brain = new Brain();
+    std::cout << "Dog constructor is called" << std::endl;
+    this->_type = "Dog";
+    this->brain = new Brain();
 }
 
 Dog::~Dog() {
-	std::cout << "Dog destructor is called" << std::endl;
-	delete this->brain;
+    std::cout << "Dog destructor is called" << std::endl;
+    delete this->brain;
 }
 
-Dog::Dog(const Dog &dog) {
-	std::cout << "Dog copy constructor is called" << std::endl;
-	*this = dog;
+Dog::Dog(const Dog &Dog) {
+    std::cout << "Dog copy constructor is called" << std::endl;
+    *this = Dog;
 }
 
-Dog &Dog::operator=(const Dog dog) {
-	std::cout << "Copy assignment operator called" << std::endl;
-	this->_type = dog._type;
-	return *this;
+Dog &Dog::operator=(const Dog Dog) {
+    std::cout << "Copy assignment operator called" << std::endl;
+    this->_type = Dog._type;
+    return *this;
 }
 
 void Dog::makeSound() const {
-	std::cout << "Tha dog barking" << std::endl;
+    std::cout << "Tha Dog purrs" << std::endl;
 }
 
 void Dog::setIdeas(std::string idea) {
-	this->brain->setIdeas(idea);
+    this->brain->setIdeas(idea);
 }
 
-void Dog::showIdea() {
-	this->brain->showIdeas();
+void Dog::showIdeas() {
+    this->brain->showIdeas();
 }
