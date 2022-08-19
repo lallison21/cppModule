@@ -14,14 +14,10 @@ Animal::Animal(const Animal &animal) {
 	*this = animal;
 }
 
-//Animal &Animal::operator=(const Animal animal) {
-//	std::cout << "Copy assignment operator called" << std::endl;
-//	this->_type = animal._type;
-//	return *this;
-//}
-
-void Animal::makeSound() const {
-	std::cout << "The animal makes a sound" << std::endl;
+Animal &Animal::operator=(const Animal &animal) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->_type = animal._type;
+	return *this;
 }
 
 std::string Animal::getType() const {
