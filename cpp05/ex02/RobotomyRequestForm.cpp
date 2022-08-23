@@ -28,6 +28,6 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
     } else if (executor.getGrade() <= this->getGradeToExecute()) {
         std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     } else {
-        throw GradeTooLowException("The grade is too low for signing\n");
+        throw GradeTooLowException("The grade is too low for execute\n");
     }
 }

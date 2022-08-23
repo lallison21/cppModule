@@ -34,6 +34,6 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
             std::cout << "The robotomy failed." << std::endl;
         }
     } else {
-        throw GradeTooLowException("The grade is too low for signing\n");
+        throw GradeTooLowException("The grade is too low for execute\n");
     }
 }

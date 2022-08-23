@@ -43,6 +43,7 @@ std::string Form::getSigned() const {
 
 void Form::beSigned(Bureaucrat &bureaucrat) {
     if (this->gradeToSign > bureaucrat.getGrade()) {
+        std::cout << "Form is signed" << std::endl;
         this->isSign = true;
     } else {
         throw GradeTooLowException("The grade is too low for signing\n");

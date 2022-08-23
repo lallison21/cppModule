@@ -10,9 +10,9 @@ int main(void){
         PresidentialPardonForm pres = PresidentialPardonForm("he");
         pres.beSigned(bro1);
         pres.execute(bro1);
-//		pres.execute(bro);
+		pres.execute(bro);
     }catch (std::exception &e) {
-        std::cout <<"Error: "  << e.what() << "\n";
+        std::cout << "Error: " << e.what() << "\n";
     }
     std::cout << std::endl;
     try {
@@ -20,23 +20,23 @@ int main(void){
         Bureaucrat tri = Bureaucrat("Tri", 20);
         RobotomyRequestForm robotomyRequestForm = RobotomyRequestForm("he");
         robotomyRequestForm.beSigned(tri);
-//		robotomyRequestForm.beSigned(tro);
-//		robotomyRequestForm.execute(tro);
+		robotomyRequestForm.beSigned(tro);
         robotomyRequestForm.execute(tri);
+		robotomyRequestForm.execute(tro);
     }catch (std::exception &e) {
-        std::cout <<"Error: "  << e.what();
+        std::cout << "Error: " << e.what();
     }
     std::cout << std::endl;
     try {
         Bureaucrat trt = Bureaucrat("Trt", 150);
         Bureaucrat trh = Bureaucrat("Trh", 20);
         ShrubberyCreationForm shrubberyCreationForm = ShrubberyCreationForm("shru");
-//		shrubberyCreationForm.execute(trh);
+		shrubberyCreationForm.execute(trh);
         shrubberyCreationForm.beSigned(trh);
         shrubberyCreationForm.execute(trh);
-//		shrubberyCreationForm.execute(trt);
+		shrubberyCreationForm.execute(trt);
     }catch (std::exception &e) {
-        std::cout <<"Error: "  << e.what();
+        std::cout << "Error: " << e.what();
     }
     return (0);
 }

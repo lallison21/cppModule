@@ -54,6 +54,6 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
             std::cout << "File not open" << std::endl;
         }
     } else {
-        throw GradeTooLowException("The grade is too low for signing\n");
+        throw GradeTooLowException("The grade is too low for execute\n");
     }
 }
