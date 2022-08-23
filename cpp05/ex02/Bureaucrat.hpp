@@ -24,6 +24,7 @@ public:
     void increment();
     void decrement();
     void signForm(Form &form);
+    void executeForm(Form const &form);
 
     class GradeTooHighException : public std::runtime_error {
     public: GradeTooHighException(const std::string &error) : std::runtime_error(error) {
