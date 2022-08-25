@@ -1,4 +1,4 @@
-NAME		=	convert
+NAME		=	whatever
 
 CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98
@@ -21,9 +21,9 @@ CYAN    	=	\033[0;36m
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-				@echo "\n[$(BLUE)INTERN$(WHITE)] OBJECT FILES CREATED\n\c"
+				@echo "\n[$(BLUE)WHATEVER$(WHITE)] OBJECT FILES CREATED\n\c"
 				@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-				@echo "[$(BLUE)INTERN$(WHITE)] EXECUTABLE FILE CREATED\n\c"
+				@echo "[$(BLUE)WHATEVER$(WHITE)] EXECUTABLE FILE CREATED\n\c"
 
 %.o			:	%.cpp $(HEADER)
 				@$(CC) $(CFLAGS) -c $< -o $@
