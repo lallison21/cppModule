@@ -27,7 +27,7 @@ $(NAME)		:	$(OBJS)
 
 %.o			:	%.cpp $(HEADER)
 				@$(CC) $(CFLAGS) -c $< -o $@
-				@echo "$(GREEN)❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱$(WHITE)\c"
+				@echo "$(GREEN)❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱❱$(WHITE)\c"
 
 clean		:
 				@$(RM) $(OBJS)
